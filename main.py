@@ -4,8 +4,9 @@ import os
 
 def spin_row():
     symbols = ["🍒", "🍓", "🍉", "🍌", "🤑"]
-
-    return [random.choice(symbols) for i in range(3)]
+    weights = [2, 2, 3, 2, 1]
+""
+    return random.choices(symbols, weights=weights, k=3)
 
 
 def print_row(row):
