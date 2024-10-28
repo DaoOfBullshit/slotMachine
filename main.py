@@ -4,7 +4,7 @@ import os
 
 def spin_row():
     symbols = ["🍒", "🍓", "🍉", "🍌", "🤑"]
-    weights = [2, 2, 3, 2, 1]
+    weights = [2, 3, 4, 3, 1]
 
     return random.choices(symbols, weights=weights, k=3)
 
@@ -182,12 +182,13 @@ def auto_spin(balance):
     # create summary txt file
     with open("Stats Summary.txt", "w", encoding='utf-8') as file:
         file.write(
-            f"Wins: {stats["Wins"]}"
-            f"\nLosses: {stats["Losses"]}"
+            f"Total Spins: {spins:,}"
+            f"\nWins: {stats["Wins"]:,}"
+            f"\nLosses: {stats["Losses"]:,}"
             f"\nWin Percentage: {winPct:.2f}%"
             f"\n1000x hits: {stats["Symbol Wins"]["🤑"]}"
             f"\nMost Frequent Symbol: {symbolMode}"
-            f"\n  Number of times hit: {symbolModeCount}"
+            f"\n  Number of times hit: {symbolModeCount:,}"
             f"\n\nNet Gain/Loss: ${stats["Net Gain"]:,.2f}"
             f"\nFinal Balance: ${balance:,.2f}"
         )
