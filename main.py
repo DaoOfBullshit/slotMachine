@@ -5,7 +5,7 @@ import os
 def spin_row():
     symbols = ["🍒", "🍓", "🍉", "🍌", "🤑"]
     weights = [2, 2, 3, 2, 1]
-""
+
     return random.choices(symbols, weights=weights, k=3)
 
 
